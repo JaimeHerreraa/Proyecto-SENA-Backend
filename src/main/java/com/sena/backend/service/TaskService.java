@@ -1,7 +1,7 @@
 package com.sena.backend.service;
 
 import com.sena.backend.model.Task;
-import com.sena.backend.repository.TaskRepository;
+import com.sena.backend.repository.ITaskRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,39 +9,39 @@ import java.util.List;
 
 @Service
 public class TaskService {
-    private final TaskRepository taskRepository;
+    private final ITaskRepository ITaskRepository;
 
-    public TaskService(TaskRepository taskRepository) {
-        this.taskRepository = taskRepository;
+    public TaskService(ITaskRepository ITaskRepository) {
+        this.ITaskRepository = ITaskRepository;
     }
 
     public void addTask(Task task) {
-        taskRepository.save(task);
+        ITaskRepository.save(task);
     }
 
     public List<Task> getTasks() {
-        return taskRepository.findAll();
+        return ITaskRepository.findAll();
     }
 
     public void deleteTask(int id) {
-        boolean exists = taskRepository.existsById(id);
+        boolean exists = ITaskRepository.existsById(id);
         if (exists) {
-            taskRepository.deleteById(id);
+            ITaskRepository.deleteById(id);
         } else {
             throw new IllegalStateException("El pedido que se intenta borrar no se encuentra en la base de datos");
         }
     }
 
     public List<Task> pendingTasks() {
-        return taskRepository.findTasksByState();
+        return ITaskRepository.findTasksByState();
     }
 
     public void updateTask(Integer id, Task taskDetails) {
-        Task task = taskRepository.findById(id)
+        Task task = ITaskRepository.findById(id)
                 .orElseThrow(() -> new IllegalStateException("El pedido con el id " + id + "no se encuentra en la base de datos"));
 
         task.setState(taskDetails.getState());
 
-        taskRepository.save(task);
+        ITaskRepository.save(task);
     }
 }

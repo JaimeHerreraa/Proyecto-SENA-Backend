@@ -2,8 +2,9 @@ package com.sena.backend.model;
 
 import lombok.Data;
 
+
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
 @Data
@@ -29,7 +30,7 @@ public class Task {
     private String state;
 
     @Column
-    private Date task_date;
+    private LocalDate task_date;
 
     public String getState() {
         return state;

@@ -2,9 +2,7 @@ package com.sena.backend.controller;
 
 import com.sena.backend.model.User;
 import com.sena.backend.service.UserService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
@@ -22,4 +20,5 @@ public class UserController {
     public Optional<User> getUser() {
         return userService.getUser();
     }
+
 }

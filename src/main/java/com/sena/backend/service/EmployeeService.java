@@ -1,7 +1,7 @@
 package com.sena.backend.service;
 
 import com.sena.backend.model.Employee;
-import com.sena.backend.repository.EmployeeRepository;
+import com.sena.backend.repository.IEmployeeRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,9 +9,9 @@ import java.util.List;
 @Service
 public class EmployeeService {
 
-    private final EmployeeRepository employeeRepository;
+    private final IEmployeeRepository employeeRepository;
 
-    public EmployeeService(EmployeeRepository employeeRepository) {
+    public EmployeeService(IEmployeeRepository employeeRepository) {
         this.employeeRepository = employeeRepository;
     }
 

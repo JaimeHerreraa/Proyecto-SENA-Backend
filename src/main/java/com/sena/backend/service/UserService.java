@@ -1,7 +1,7 @@
 package com.sena.backend.service;
 
 import com.sena.backend.model.User;
-import com.sena.backend.repository.UserRepository;
+import com.sena.backend.repository.IUserRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -9,13 +9,14 @@ import java.util.Optional;
 @Service
 public class UserService {
 
-    private final UserRepository userRepository;
+    private final IUserRepository IUserRepository;
 
-    public UserService(UserRepository userRepository) {
-        this.userRepository = userRepository;
+    public UserService(IUserRepository IUserRepository) {
+        this.IUserRepository = IUserRepository;
     }
 
     public Optional<User> getUser() {
-        return userRepository.findById(1);
+        return IUserRepository.findById(1);
     }
+
 }

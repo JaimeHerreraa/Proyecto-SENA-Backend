@@ -1,10 +1,9 @@
 package com.sena.backend.repository;
 
-import com.sena.backend.model.User;
+import com.sena.backend.model.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Integer> {
-
+public interface IEmployeeRepository extends JpaRepository<Employee, Long> {
 }

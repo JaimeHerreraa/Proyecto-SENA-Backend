@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface TaskRepository extends JpaRepository<Task, Integer> {
+public interface ITaskRepository extends JpaRepository<Task, Integer> {
 
     @Query(value = "SELECT * FROM task WHERE state='pendiente'", nativeQuery = true)
     List<Task> findTasksByState();
