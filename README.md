@@ -6,7 +6,7 @@ API desarrollada en SpringBoot basada en algunos estandares REST.
 Para bajar el código de nuestra API, el cual se encuentra en GitHub es necesario hacer una copia local del repositorio, para eso ejecutamos el siguiente comando en la consola:
 
 ```bash
-git-clone https://github.com/JaimeHerreraa/Acertados-Backend.git
+git-clone https://github.com/JaimeHerreraa/Proyecto-SENA-Backend.git
 ```
 No es necesario ejecutar alguno otro comando para instalar dependencias debido a que una vez el proyecto es ejecutado en un IDE el gestor de paquetes, en este caso "Maven" se encarga de descargar todos los recursos necesarios para la ejecución del software que estén definidos en el archivo "pom.xml".
 
